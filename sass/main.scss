@@ -1,6 +1,7 @@
 @import "mixin";
 @import "var";
-
+@import "inheritance";
+@import "function";
 
 // SCSS - Topics
 // 1: operators
@@ -9,7 +10,6 @@
 // 4: mixin
 // 5: parameters
 // 6: partials
-
 
 * {
   margin: 0;
@@ -28,10 +28,14 @@ html {
   background-color: $bg-color;
 
   h1 {
+    padding: calculate-spacing(2);
+    @extend %message-shared;
+    background-color: #dff0d8;
     @include commonCode(1.5rem, uppercase); // this way is better
     //   letter-spacing: 1.5rem; not recommended
+
     &:hover {
-      color: #fff;
+      color: grey;
     }
     &::after {
       content: " SCSS";
@@ -39,6 +43,9 @@ html {
   }
 
   p {
+    padding: calculate-spacing(3);
+    @extend %message-shared;
+    background-color: #f2dede;
     @include commonCode(0.2rem, capitalize);
     &:hover {
       color: #fff;
@@ -48,3 +55,10 @@ html {
     }
   }
 }
+
+
+// @for $i from 1 through 3 {
+//   .col-#{$i} {
+//     width: 100% / $i;
+//   }
+// }

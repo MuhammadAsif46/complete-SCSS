@@ -34,32 +34,16 @@ body {
   font-family: Arial, sans-serif;
   background-color: $primary-color;
 }
+---
 
+## **Variables**
+Variables in SCSS store reusable values, such as colors, fonts, or sizes.
+Example:
+```scss
+$font-stack: Helvetica, sans-serif;
+$main-color: #333;
 
-1. Variables
-    -> Variables in SCSS store reusable values, such as colors, fonts, or sizes.
-
-2. Nesting
-    -> Nesting in SCSS makes it easy to write hierarchical styles similar to HTML structure.
-
-
-3. Partials and Import
-    -> Partials are SCSS files prefixed with an underscore (_) and used for modular styles. Use @import to include them.
-  Example:
-    _variables.scss
-    _header.scss
-
-4. Mixins
-    -> Mixins allow reusable blocks of styles with optional arguments.
-
-5. Inheritance
-    -> Inheritance enables sharing styles between selectors using @extend.
-
-6. Functions
-    -> Functions in SCSS return a value based on calculations or operations.
-
-7. Operators
-    -> SCSS supports mathematical and logical operators.
-
-8. Conditionals and Loops
-    -> SCSS provides @if, @else, and loops like @for, @each, and @while for dynamic styles.
+body {
+  font: 100% $font-stack;
+  color: $main-color;
+}

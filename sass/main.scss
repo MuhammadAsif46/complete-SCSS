@@ -1,3 +1,16 @@
+@import "mixin";
+@import "var";
+
+
+// SCSS - Topics
+// 1: operators
+// 2: variables
+// 3: nesting
+// 4: mixin
+// 5: parameters
+// 6: partials
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,27 +20,6 @@
 html {
   font-size: 62.5%;
 }
-
-$bg-color: #10ac84;
-
-@mixin flexProperties {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-@mixin commonCode($par1, $par2) {
-  color: #222f3e;
-  font-size: 3rem + 5rem;
-  letter-spacing: $par1;
-  text-transform: $par2;
-}
-// 1: operators
-// 2: variables
-// 3: nesting
-// 4: mixin
-// 5: parameters
 
 .main-header {
   width: 100vw;

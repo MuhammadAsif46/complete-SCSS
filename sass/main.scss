@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$bg-color: #10ac84;
+
+@mixin flexProperties {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin commonCode($par1, $par2) {
+  color: #222f3e;
+  font-size: 3rem + 5rem;
+  letter-spacing: $par1;
+  text-transform: $par2;
+}
+// 1: operators
+// 2: variables
+// 3: nesting
+// 4: mixin
+// 5: parameters
+
+.main-header {
+  width: 100vw;
+  height: 100vh;
+  @include flexProperties;
+  background-color: $bg-color;
+
+  h1 {
+    @include commonCode(1.5rem, uppercase); // this way is better
+    //   letter-spacing: 1.5rem; not recommended
+    &:hover {
+      color: #fff;
+    }
+    &::after {
+      content: " SCSS";
+    }
+  }
+
+  p {
+    @include commonCode(0.2rem, capitalize);
+    &:hover {
+      color: #fff;
+    }
+    &::before {
+      content: "Greet! ";
+    }
+  }
+}

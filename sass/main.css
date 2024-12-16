@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #10ac84;
+}
+.main-header h1 {
+  color: #222f3e;
+  font-size: 8rem;
+  letter-spacing: 1.5rem;
+  text-transform: uppercase;
+}
+.main-header h1:hover {
+  color: #fff;
+}
+.main-header h1::after {
+  content: " SCSS";
+}
+.main-header p {
+  color: #222f3e;
+  font-size: 8rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+}
+.main-header p:hover {
+  color: #fff;
+}
+.main-header p::before {
+  content: "Greet! ";
+}/*# sourceMappingURL=main.css.map */

@@ -59,7 +59,8 @@ body {
 
 ---
 
-Nesting
+## **Nesting**
+
 Nesting in SCSS makes it easy to write hierarchical styles similar to HTML structure.
 Example:
 
@@ -77,4 +78,112 @@ nav {
   }
 }
 ```
+
+---
+
+## **Partials and Import**
+
+Partials are SCSS files prefixed with an underscore (\_) and used for modular styles. Use @import to include them.
+Example:
+
+```scss
+_variables.scss
+_header.scss
+Main SCSS file:
+
+
+@import 'variables';
+@import 'header';
+```
+
+---
+
+## **Mixins**
+
+Mixins allow reusable blocks of styles with optional arguments.
+Example:
+
+```scss
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+.box {
+  @include border-radius(10px);
+}
+```
+
+---
+
+## **Inheritance**
+
+Inheritance enables sharing styles between selectors using @extend.
+Example:
+
+```scss
+%message-shared {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.success {
+  @extend %message-shared;
+  background-color: #dff0d8;
+}
+
+.error {
+  @extend %message-shared;
+  background-color: #f2dede;
+}
+```
+
+---
+
+## **Functions**
+
+Functions in SCSS return a value based on calculations or operations.
+Example:
+
+```scss
+@function calculate-spacing($multiplier) {
+  @return 10px * $multiplier;
+}
+
+.container {
+  padding: calculate-spacing(2);
+}
+```
+
+---
+
+## **Operators**
+
+SCSS supports mathematical and logical operators.
+Example:
+
+```scss
+$width: 100px;
+
+.container {
+  width: $width / 2; // 50px
+}
+```
+
+---
+
+## **Conditionals and Loops**
+
+SCSS provides @if, @else, and loops like @for, @each, and @while for dynamic styles.
+Example:
+
+```scss
+@for $i from 1 through 3 {
+  .col-#{$i} {
+    width: 100% / $i;
+  }
+}
+```
+
 ---
